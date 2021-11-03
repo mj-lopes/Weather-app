@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Reset } from "styled-reset";
+import GlobalStyle from "./GlobalStyle";
 import { Provider } from "react-redux";
 import store from "./store/configureStore";
 import App from "./App";
@@ -7,6 +9,8 @@ import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <Reset />
+      <GlobalStyle />
       <App />
     </Provider>
   </React.StrictMode>,
