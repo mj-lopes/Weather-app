@@ -1,8 +1,8 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import dataFetched from "./dataFetched";
-import location from "./location";
+import nextDaysPrevision from "./nextDaysPrevision";
+import todayPrevision from "./todayPrevision";
 
-const reducer = combineReducers({ dataFetched, location });
+const reducer = combineReducers({ nextDaysPrevision, todayPrevision });
 
 const store = configureStore({ reducer });
 

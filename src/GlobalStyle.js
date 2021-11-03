@@ -5,7 +5,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Manrope', sans-serif;
     color: #F2FBFF;  
     font-size: 1rem;
-    line-height: 1.4;
   }
 `;
 
