@@ -1,6 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+
+import dayFormater from "../../util/dayFormater";
+import monthFormater from "../../util/monthFormater";
+
 import Drop from "../../asserts/humidite.svg";
 import WindSpeed from "../../asserts/wind-speed.svg";
 import WindDirection from "../../asserts/wind-direction.svg";
@@ -15,66 +19,17 @@ export const Today = () => {
   if (!TodaysWeatherPrevision) return null;
 
   const now = new Date();
-  function dayFormat(day) {
-    switch (day) {
-      case 0:
-        return "Dom";
-      case 1:
-        return "Seg";
-      case 2:
-        return "Ter";
-      case 3:
-        return "Qua";
-      case 4:
-        return "Qui";
-      case 5:
-        return "Sex";
-      case 6:
-        return "Sab";
-      default:
-        return day;
-    }
-  }
 
-  function monthFormat(month) {
-    switch (month) {
-      case 0:
-        return "Jan";
-      case 1:
-        return "Fev";
-      case 2:
-        return "Mar";
-      case 3:
-        return "Abr";
-      case 4:
-        return "Mai";
-      case 5:
-        return "Jun";
-      case 6:
-        return "Jul";
-      case 7:
-        return "Ago";
-      case 8:
-        return "Set";
-      case 9:
-        return "Out";
-      case 10:
-        return "Nov";
-      case 11:
-        return "Dez";
-      default:
-        return month;
-    }
-  }
   const todayDayInfo = {
-    dayWeek: dayFormat(now.getDay()),
+    dayWeek: dayFormater(now.getDay()),
     dayMonth: now.getDate(),
-    month: monthFormat(now.getMonth()),
+    month: monthFormater(now.getMonth()),
   };
+
   return (
     <PrevisionToday>
       <DateToday>
-        <Title>Hoje</Title>
+        <Title>Agora</Title>
         <Day>
           {todayDayInfo.dayWeek}, {todayDayInfo.dayMonth} {todayDayInfo.month}
         </Day>
@@ -206,6 +161,7 @@ const Condition = styled.div`
   text-transform: capitalize;
   & p {
     margin-top: 8px;
+    font-weight: bold;
   }
 `;
 
@@ -218,20 +174,6 @@ const MinMaxTempContainer = styled.div`
       margin: 0 4px;
     }
   }
-`;
-
-const Location = styled.div`
-  background: linear-gradient(
-    270.05deg,
-    #f0ad43 19.23%,
-    rgba(240, 173, 67, 0.409688) 47.22%,
-    rgba(240, 173, 67, 0) 86.67%
-  );
-  border-radius: 0px 0px 10px 10px;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  text-align: right;
-  font-size: 2rem;
 `;
 
 const ExtraInfo = styled.div`
@@ -272,4 +214,18 @@ const Wind = styled(extraInfoItem)`
     height: 20px;
     background: url(${WindSpeed}) no-repeat;
   }
+`;
+
+const Location = styled.div`
+  background: linear-gradient(
+    270.05deg,
+    #f0ad43 19.23%,
+    rgba(240, 173, 67, 0.409688) 47.22%,
+    rgba(240, 173, 67, 0) 86.67%
+  );
+  border-radius: 0px 0px 10px 10px;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: right;
+  font-size: 2rem;
 `;

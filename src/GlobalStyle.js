@@ -6,6 +6,9 @@ const GlobalStyle = createGlobalStyle`
     color: #F2FBFF;  
     font-size: 1rem;
   }
+  img {
+    max-width: 100%;
+  }
 `;
 
 export default GlobalStyle;
