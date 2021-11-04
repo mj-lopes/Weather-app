@@ -1,36 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 
-import { NextDay } from "..";
+import { NextDay, Slide } from "..";
 
 export const NextDays = () => {
   const nextDays = useSelector((state) => state.nextDaysPrevision.data?.daily);
 
   if (!nextDays) return null;
 
-  const slideConfigs = {
-    arrows: false,
-    slidesToShow: 4,
-    infinite: false,
-    swipeToSlide: true,
-    adaptiveHeight: true,
-  };
-
   return (
     <Container>
       <Tittle>Próximos Dias</Tittle>
       <List>
-        <Slider {...slideConfigs}>
+        <Slide>
           {nextDays.map((dia) => (
             <li key={`dt - ${dia.dt}`}>
               <NextDay dados={dia} />
             </li>
           ))}
-        </Slider>
+        </Slide>
       </List>
     </Container>
   );
