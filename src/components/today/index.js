@@ -1,6 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import Drop from "../../asserts/humidite.svg";
+import WindSpeed from "../../asserts/wind-speed.svg";
+import WindDirection from "../../asserts/wind-direction.svg";
+import Highest from "../../asserts/highest.svg";
+import Lowest from "../../asserts/lowest.svg";
 
 export const Today = () => {
   const TodaysWeatherPrevision = useSelector(
@@ -76,20 +81,50 @@ export const Today = () => {
       </DateToday>
 
       <MainTemp>
-        <div>
-          <p>
-            {Math.round(TodaysWeatherPrevision.main.temp)}
-            <sup>°c</sup>
-          </p>
-          <img
-            src={`/asserts/svgs/${TodaysWeatherPrevision?.weather[0].icon.substring(
-              0,
-              2,
-            )}.svg`}
-            alt="condição do tempo"
-          />
-        </div>
+        <p>
+          {Math.round(TodaysWeatherPrevision.main.temp)}
+          <sup>°c</sup>
+        </p>
+
+        <ConditionAndMaxMin>
+          <Condition>
+            <img
+              src={`/asserts/svgs/${TodaysWeatherPrevision?.weather[0].icon.substring(
+                0,
+                2,
+              )}.svg`}
+              alt="condição do tempo"
+            />
+            <p>{TodaysWeatherPrevision?.weather[0].description}</p>
+          </Condition>
+          <MinMaxTempContainer>
+            <p>
+              <img src={Lowest} alt="" />
+              {Math.round(TodaysWeatherPrevision.main.temp_min)} °c
+            </p>
+            <p>
+              <img src={Highest} alt="" />
+              {Math.round(TodaysWeatherPrevision.main.temp_max)} °c
+            </p>
+          </MinMaxTempContainer>
+        </ConditionAndMaxMin>
       </MainTemp>
+
+      <ExtraInfo>
+        <Humidity>{TodaysWeatherPrevision.main.humidity}%</Humidity>
+        <Wind>
+          {Math.round(TodaysWeatherPrevision.wind.speed)} KM/h
+          <img
+            src={WindDirection}
+            alt="Direção do vento"
+            style={{
+              transform: `rotate(${TodaysWeatherPrevision.wind.deg}deg)`,
+              width: "14px",
+              marginLeft: "8px",
+            }}
+          />
+        </Wind>
+      </ExtraInfo>
 
       <Location>
         <p>
@@ -142,26 +177,46 @@ const Day = styled.p`
 const MainTemp = styled.div`
   display: flex;
   justify-content: center;
-
-  font-size: 8rem;
+  margin-bottom: 3rem;
   text-align: center;
 
   & div {
     display: flex;
   }
-  & p {
+  & > p {
+    font-size: 8rem;
     padding-top: 30px;
   }
-
   & p sup {
     font-size: 4rem;
     vertical-align: super;
     color: #f2d16f;
   }
+`;
 
-  & img {
-    margin-left: 32px;
-    align-self: flex-start;
+const ConditionAndMaxMin = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 32px;
+`;
+
+const Condition = styled.div`
+  flex-direction: column;
+  text-transform: capitalize;
+  & p {
+    margin-top: 8px;
+  }
+`;
+
+const MinMaxTempContainer = styled.div`
+  justify-content: center;
+  & p {
+    margin-right: 8px;
+
+    img {
+      margin: 0 4px;
+    }
   }
 `;
 
@@ -177,4 +232,44 @@ const Location = styled.div`
   padding: 0.5rem 1rem;
   text-align: right;
   font-size: 2rem;
+`;
+
+const ExtraInfo = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  text-align: left;
+  font-size: 1rem;
+`;
+
+const extraInfoItem = styled.p`
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-right: 8px;
+  }
+`;
+
+const Humidity = styled(extraInfoItem)`
+  &::before {
+    width: 17px;
+    height: 24px;
+    background: url(${Drop}) no-repeat;
+  }
+`;
+
+const Wind = styled(extraInfoItem)`
+  &::before {
+    width: 24px;
+    height: 20px;
+    background: url(${WindSpeed}) no-repeat;
+  }
 `;
