@@ -60,9 +60,8 @@ export const NextDay = ({ dados }) => {
 };
 
 const Container = styled.div`
-  width: 260px;
-  min-height: 160px;
-  flex-shrink: 0;
+  min-height: 180px;
+  margin: 0 1rem;
 
   background: radial-gradient(
       100% 100% at 0% 0%,
@@ -84,7 +83,7 @@ const DayOFWeekContainer = styled.div`
   background: linear-gradient(
     270.05deg,
     #f0ad43 19.23%,
-    rgba(240, 173, 67, 0.409688) 60.22%,
+    rgba(240, 173, 67, 0.409688) 50.22%,
     rgba(240, 173, 67, 0) 86.67%
   );
   border-radius: 0px 10px 0px 0px;
@@ -100,7 +99,7 @@ const PrevisionContainer = styled.div`
   padding: 1rem;
 `;
 
-const Temperature = styled.p`
+const Temperature = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 3rem;
@@ -135,4 +134,9 @@ const MinMaxTempContainer = styled.div`
 const Weather = styled.div`
   max-width: 80px;
   text-align: center;
+
+  & p {
+    margin-top: 8px;
+    text-transform: capitalize;
+  }
 `;

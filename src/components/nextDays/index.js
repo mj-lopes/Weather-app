@@ -1,6 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 import { NextDay } from "..";
 
 export const NextDays = () => {
@@ -8,15 +12,25 @@ export const NextDays = () => {
 
   if (!nextDays) return null;
 
+  const slideConfigs = {
+    arrows: false,
+    slidesToShow: 4,
+    infinite: false,
+    swipeToSlide: true,
+    adaptiveHeight: true,
+  };
+
   return (
     <Container>
       <Tittle>Próximos Dias</Tittle>
       <List>
-        {nextDays.map((dia) => (
-          <li key={`dt - ${dia.dt}`}>
-            <NextDay dados={dia} />
-          </li>
-        ))}
+        <Slider {...slideConfigs}>
+          {nextDays.map((dia) => (
+            <li key={`dt - ${dia.dt}`}>
+              <NextDay dados={dia} />
+            </li>
+          ))}
+        </Slider>
       </List>
     </Container>
   );
@@ -27,12 +41,7 @@ const Container = styled.div`
 `;
 
 const List = styled.ul`
-  display: flex;
-  gap: 1rem;
-  padding-left: 1rem;
   margin-top: 1rem;
-
-  overflow-x: hidden;
 `;
 
 const Tittle = styled.h2`

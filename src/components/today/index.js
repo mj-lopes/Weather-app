@@ -159,17 +159,19 @@ const ConditionAndMaxMin = styled.div`
 const Condition = styled.div`
   flex-direction: column;
   text-transform: capitalize;
+  margin-bottom: 1rem;
   & p {
     margin-top: 8px;
-    font-weight: bold;
+    font-size: 2rem;
   }
 `;
 
 const MinMaxTempContainer = styled.div`
   justify-content: center;
+  align-items: center;
   & p {
     margin-right: 8px;
-
+    font-size: 1.5rem;
     img {
       margin: 0 4px;
     }
