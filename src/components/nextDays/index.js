@@ -31,6 +31,7 @@ const Container = styled.div`
 
 const List = styled.ul`
   margin-top: 1rem;
+  cursor: grab;
 `;
 
 const Tittle = styled.h2`

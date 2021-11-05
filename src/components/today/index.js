@@ -27,7 +27,7 @@ export const Today = () => {
   };
 
   return (
-    <PrevisionToday>
+    <Container>
       <DateToday>
         <Title>Agora</Title>
         <Day>
@@ -86,11 +86,11 @@ export const Today = () => {
           {TodaysWeatherPrevision.name} / {TodaysWeatherPrevision.sys.country}
         </p>
       </Location>
-    </PrevisionToday>
+    </Container>
   );
 };
 
-const PrevisionToday = styled.div`
+const Container = styled.div`
   max-width: 70vw;
   min-height: 20vh;
   margin: auto;
@@ -109,6 +109,11 @@ const PrevisionToday = styled.div`
   backdrop-filter: blur(20px);
 
   border-radius: 6px;
+
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
 `;
 
 const DateToday = styled.div`

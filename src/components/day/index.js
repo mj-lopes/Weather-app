@@ -60,7 +60,10 @@ export const Day = ({ dados }) => {
 };
 
 const Container = styled.div`
-  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 190px;
   margin: 0 1rem;
 
   background: radial-gradient(
