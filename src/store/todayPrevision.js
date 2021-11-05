@@ -36,6 +36,9 @@ export const fetchTodayPrevision = (pos) => async (dispatch) => {
       `https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&appid=${apiKey}&units=metric&lang=pt_br
 `,
     );
+
+    if (!resp.ok) throw new Error(resp.message);
+
     const data = await resp.json();
     dispatch(fetchSuccess(data));
   } catch (e) {
