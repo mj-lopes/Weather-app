@@ -115,6 +115,7 @@ const DateToday = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: right;
 `;
 
 const Title = styled.span`
@@ -147,6 +148,11 @@ const MainTemp = styled.div`
     vertical-align: super;
     color: #f2d16f;
   }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
 `;
 
 const ConditionAndMaxMin = styled.div`
@@ -154,6 +160,10 @@ const ConditionAndMaxMin = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-left: 32px;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 0;
+  }
 `;
 
 const Condition = styled.div`
@@ -163,6 +173,11 @@ const Condition = styled.div`
   & p {
     margin-top: 8px;
     font-size: 2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    max-width: 150px;
+    margin: 1rem auto;
   }
 `;
 
@@ -188,6 +203,13 @@ const ExtraInfo = styled.div`
 
   text-align: left;
   font-size: 1rem;
+
+  @media screen and (max-width: 600px) {
+    position: static;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
 `;
 
 const extraInfoItem = styled.p`
