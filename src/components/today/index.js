@@ -146,7 +146,8 @@ const MainTemp = styled.div`
   }
   & > p {
     font-size: 8rem;
-    padding-top: 30px;
+    align-self: center;
+    padding-bottom: 3rem;
   }
   & p sup {
     font-size: 4rem;
@@ -175,6 +176,8 @@ const Condition = styled.div`
   flex-direction: column;
   text-transform: capitalize;
   margin-bottom: 1rem;
+  max-width: 200px;
+
   & p {
     margin-top: 8px;
     font-size: 2rem;
