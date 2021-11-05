@@ -14,7 +14,7 @@ export const Map = () => {
     window.addEventListener("resize", debounce(updateContainerWidth, 500));
     updateContainerWidth();
     return () => {
-      window.removeEventListener("resize", updateContainerWidth);
+      window.removeEventListener("resize", debounce(updateContainerWidth, 500));
     };
   });
 
