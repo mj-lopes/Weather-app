@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { NextDay, Slide } from "..";
+import { Day, Slide } from "..";
 
 export const NextDays = () => {
   const nextDays = useSelector((state) => state.nextDaysPrevision.data?.daily);
@@ -16,7 +16,7 @@ export const NextDays = () => {
         <Slide>
           {nextDays.map((dia) => (
             <li key={`dt - ${dia.dt}`}>
-              <NextDay dados={dia} />
+              <Day dados={dia} />
             </li>
           ))}
         </Slide>
