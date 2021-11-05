@@ -91,8 +91,8 @@ export const Today = () => {
 };
 
 const Container = styled.div`
+  width: 100%;
   max-width: 70vw;
-  min-height: 20vh;
   margin: auto;
 
   background: radial-gradient(
@@ -111,8 +111,7 @@ const Container = styled.div`
   border-radius: 6px;
 
   @media screen and (max-width: 700px) {
-    max-width: 100%;
-    margin: 0 1rem;
+    max-width: 90vw;
   }
 `;
 

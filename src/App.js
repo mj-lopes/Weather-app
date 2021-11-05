@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { Today, NextDays, Map } from "./components";
+import { Today, NextDays, Map, Loading } from "./components";
 import { fetchNextDayPrevision } from "./store/nextDaysPrevision";
 import { fetchTodayPrevision } from "./store/todayPrevision";
 
 const App = () => {
   const dispatch = useDispatch();
+  const loadingTodayPrevision = useSelector(
+    ({ todayPrevision }) => todayPrevision.loading,
+  );
+  const loadingNextDaysPrevision = useSelector(
+    ({ nextDaysPrevision }) => nextDaysPrevision.loading,
+  );
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
@@ -16,6 +22,14 @@ const App = () => {
       dispatch(fetchTodayPrevision({ latitude, longitude }));
     });
   }, [dispatch]);
+
+  if (loadingTodayPrevision || loadingNextDaysPrevision) {
+    return (
+      <Container>
+        <Loading />
+      </Container>
+    );
+  }
 
   return (
     <Container>
@@ -27,8 +41,9 @@ const App = () => {
 };
 
 const Container = styled.main`
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  padding-top: 2rem;
   background: radial-gradient(
     circle at 50% 50%,
     #18bbdd,
