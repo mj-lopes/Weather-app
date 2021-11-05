@@ -158,6 +158,10 @@ const MainTemp = styled.div`
   @media screen and (max-width: 600px) {
     flex-direction: column-reverse;
     margin-bottom: 0;
+
+    & > p {
+      padding: 1rem 0;
+    }
   }
 `;
 
