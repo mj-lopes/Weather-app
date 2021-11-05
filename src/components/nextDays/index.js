@@ -26,7 +26,7 @@ export const NextDays = () => {
 };
 
 const Container = styled.div`
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
 
 const List = styled.ul`

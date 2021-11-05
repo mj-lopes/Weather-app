@@ -94,6 +94,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 70vw;
   margin: auto;
+  margin-top: 1rem;
 
   background: radial-gradient(
       100% 100% at 0% 0%,
@@ -137,7 +138,7 @@ const Day = styled.p`
 const MainTemp = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
 
   & div {
