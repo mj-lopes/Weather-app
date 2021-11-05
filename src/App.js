@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 
-import { Today, NextDays } from "./components";
+import { Today, NextDays, Map } from "./components";
 import { fetchNextDayPrevision } from "./store/nextDaysPrevision";
 import { fetchTodayPrevision } from "./store/todayPrevision";
 
@@ -21,6 +21,7 @@ const App = () => {
     <Container>
       <Today />
       <NextDays />
+      <Map />
     </Container>
   );
 };
