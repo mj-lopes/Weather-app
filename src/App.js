@@ -2,18 +2,28 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Today, NextDays, Map, Loading } from "./components";
+import { Today, NextDays, Map, Loading, Informer } from "./components";
 import { fetchNextDayPrevision } from "./store/nextDaysPrevision";
 import { fetchTodayPrevision } from "./store/todayPrevision";
 
 const App = () => {
   const dispatch = useDispatch();
+
+  // Verifica se está carregando
   const loadingTodayPrevision = useSelector(
     ({ todayPrevision }) => todayPrevision.loading,
   );
   const loadingNextDaysPrevision = useSelector(
     ({ nextDaysPrevision }) => nextDaysPrevision.loading,
   );
+  const isLoading = loadingTodayPrevision || loadingNextDaysPrevision;
+
+  // Verifica se existe os dados puxados
+  const dataToday = useSelector(({ todayPrevision }) => todayPrevision.data);
+  const dataNextDays = useSelector(
+    ({ nextDaysPrevision }) => nextDaysPrevision.data,
+  );
+  const hasDataFetched = dataToday && dataNextDays;
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
@@ -23,7 +33,15 @@ const App = () => {
     });
   }, [dispatch]);
 
-  if (loadingTodayPrevision || loadingNextDaysPrevision) {
+  if (!isLoading && !hasDataFetched) {
+    return (
+      <Container>
+        <Informer />
+      </Container>
+    );
+  }
+
+  if (isLoading) {
     return (
       <Container>
         <Loading />
