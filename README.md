@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+<p align='center'>
+  
+<a href='https://nice-weather.vercel.app' > 
+<img src='https://user-images.githubusercontent.com/56007721/140596300-9b6375a7-fc98-42c5-9a2c-01300e8e1cd9.png' alt='Logo da NiceWeather'> 
+</a>
+  
+</p>
+<div align='center'>
+  <h1> Nice Weather! </h1>
+  <p> Aplicação ReactJS de previsão meteorológica.</p>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+ <a href="#requisitos">Pré-requisitos</a> •
+ <a href="#instalacao">Instalação</a> •
+ <a href="#funcionando">Funcionando</a> •
+ <a href="#tecnologias">Tecnologias</a> •   
+ <a href="#autor">Autor</a> •
+ <a href="#licenc-a">Licença</a> 
+</p>
 
-## Available Scripts
+<h4 align="center"> 
+	🚧  Em construção...  🚧
+</h4>
 
-In the project directory, you can run:
+<h2> Features 👓</h2>
 
-### `npm start`
+- [x] Implementação da base
+- [x] Implementar Redux
+- [x] Mapa
+- [x] Responsividade
+- [x] Animação de carregamento
+- [x] Informer sobre geolocalização
+- [ ] Formulário de busca por cidades
+- [ ] Animações de fundo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a href='https://nice-weather.vercel.app'> <h3> Faça um teste online 🔅</h3> </a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2 id='requisitos'> Pré-requisitos ⚙</h2>
 
-### `npm test`
+Antes de iniciar este aplicativo você irá precisar de uma API KEY da [OpenWeather](https://openweathermap.org/api/). Escolha um dos planos e cadastre-se no site para conseguir uma chave ( existe um plano gratuito ).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Você também vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 
-### `npm run build`
+Além disto é bom ter um editor de texto para trabalhar com o código, recomendo o [VSCode](https://code.visualstudio.com/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2 id='instalacao'> Instalação 🔧</h2>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+``` 
+No cmd, gitbash ou terminal de preferência: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Clone esse repositório:
+$ git clone https://github.com/mj-lopes/Weather-app 
 
-### `npm run eject`
+# Navegue para o diretório raiz do projeto
+$ cd weather_v2
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Instale as dependências do projeto
+$ npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Na pasta raíz do projeto, crie um arquivo: ```.env.local```.<br/>Abra este arquivo com um editor de texto e escreva ```REACT_APP_WEATHER_API_KEY=SUA_CHAVE_DO_OPENWEATHER```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h2 id='funcionando'> Funcionando 💨 </h2>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Ainda na pasta raiz do projeto, no terminal, execute o comando: ``` $ npm start ```.<br/>
+O navegador irá abrir em uma nova janela o app já rodando, do contrário, abra em [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+<h2 id='tecnologias'> Tecnologias 🛠 </h2>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As seguintes ferramentas foram usadas na construção deste projeto:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://pt-br.reactjs.org/)
+- [Redux](https://react-redux.js.org/)
+- [Styled Components](https://styled-components.com/)
+- [Figma](https://www.figma.com/ui-design-tool/)
 
-### Code Splitting
+<h2 id='autor'> Autor </h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src='https://user-images.githubusercontent.com/56007721/140599522-58255910-aa8e-4045-9cf9-2f061d6dd472.png' style="width: 120px;">
+<p>Feito com 🧡 por <a href='https://github.com/mj-lopes'>Marcos Júnior</a>. </p><br/>
+<p>Entre em contato 👇
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Gmail Badge](https://img.shields.io/badge/-mlrj.junior%40gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mlrj.junior@gmail.com)](mailto:mlrj.junior@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Marcos_Junior-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mlrjunior/)](https://www.linkedin.com/in/mlrjunior/) 
+</p>
