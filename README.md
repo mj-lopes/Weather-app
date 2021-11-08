@@ -33,8 +33,13 @@
 - [x] Informer sobre geolocalização
 - [ ] Formulário de busca por cidades
 - [ ] Animações de fundo
+</br>
 
+<div  align='center'>
+<img src='https://user-images.githubusercontent.com/56007721/140678766-f3d207dd-6213-461a-bc37-25f1498db968.png' alt='página da nice weather' />
+	
 <a href='https://nice-weather.vercel.app'> <h3> Faça um teste online 🔅</h3> </a>
+</div>
 
 <h2 id='requisitos'> Pré-requisitos ⚙</h2>
 
