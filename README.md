@@ -15,8 +15,7 @@
  <a href="#instalacao">Instalação</a> •
  <a href="#funcionando">Funcionando</a> •
  <a href="#tecnologias">Tecnologias</a> •   
- <a href="#autor">Autor</a> •
- <a href="#licenc-a">Licença</a> 
+ <a href="#autor">Autor</a> 
 </p>
 
 <h4 align="center"> 
@@ -25,14 +24,18 @@
 
 <h2> Features 👓</h2>
 
-- [x] Implementação da base
-- [x] Implementar Redux
-- [x] Mapa
-- [x] Responsividade
-- [x] Animação de carregamento
-- [x] Informer sobre geolocalização
-- [ ] Formulário de busca por cidades
-- [ ] Animações de fundo
+- Carregamento automático da previsão na localidade do usuário
+- Previsão atual
+	- Temperatura atual, miníma e máxima.
+	- Estado climático
+	- Umidade
+	- Velocidade e direção do vento
+	- Dia da semana e a localidade
+- Previsões dos próximos 7 dias 
+	- Temperatura média, miníma e máxima
+	- Estado climático
+	- Dia da semana
+- Mapa interativo para visualização de diversas váriaveis climaticas
 </br>
 
 <div  align='center'>
@@ -43,7 +46,7 @@
 
 <h2 id='requisitos'> Pré-requisitos ⚙</h2>
 
-Antes de iniciar este aplicativo você irá precisar de uma API KEY da [OpenWeather](https://openweathermap.org/api/). Escolha um dos planos e cadastre-se no site para conseguir uma chave ( existe um plano gratuito ).
+Antes de iniciar este aplicativo você irá precisar de uma API KEY da [OpenWeather](https://openweathermap.org/api/). Escolha um dos planos e cadastre-se no site para conseguir uma chave ( existe um plano gratuito ). Por fim subscreva-se nos serviços 'Current Weather Data' e 'One Call API'.
 
 Você também vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
@@ -80,6 +83,11 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 - [Redux](https://react-redux.js.org/)
 - [Styled Components](https://styled-components.com/)
 - [Figma](https://www.figma.com/ui-design-tool/)
+
+<h2> TODO? 📝 </h2>
+
+- [ ] Search form para pesquisa de cidades através do nome
+- [ ] Animações de fundo
 
 <h2 id='autor'> Autor </h2>
 
