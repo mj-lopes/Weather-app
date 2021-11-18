@@ -5,3 +5,4 @@ export * from "./slider";
 export * from "./map";
 export * from "./loading";
 export * from "./informer";
+export * from "./search";

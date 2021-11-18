@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Today, NextDays, Map, Loading, Informer } from "./components";
+import { Today, NextDays, Map, Loading, Informer, Search } from "./components";
 import { fetchNextDayPrevision } from "./store/nextDaysPrevision";
 import { fetchTodayPrevision } from "./store/todayPrevision";
 
@@ -51,6 +51,7 @@ const App = () => {
 
   return (
     <Container>
+      <Search />
       <Today />
       <NextDays />
       <Map />
