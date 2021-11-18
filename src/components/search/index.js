@@ -98,7 +98,7 @@ const animation = keyframes`
   }
 `;
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   border-radius: 4px;
   background: radial-gradient(
       100% 100% at 0% 0%,
