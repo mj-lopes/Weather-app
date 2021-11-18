@@ -19,7 +19,6 @@ const slice = createSlice({
     },
     fetchError(state, action) {
       state.loading = false;
-      state.data = null;
       state.error = action.payload;
     },
   },

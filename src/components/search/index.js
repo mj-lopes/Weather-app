@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Lupa from "../../asserts/lupa.svg";
 import { fetchCityData } from "../../store/todayPrevision";
 
@@ -8,18 +8,35 @@ export const Search = () => {
   const [formIsOpen, setformIsOpen] = useState(false);
   const [city, setCity] = useState("");
   const dispatch = useDispatch();
+  const formRef = useRef();
 
   function handleForm(e) {
     e.preventDefault();
-    dispatch(fetchCityData(city));
+    if (city) dispatch(fetchCityData(city));
   }
 
-  return (
-    <Container>
-      <SearchBtn />
+  useEffect(() => {
+    window.addEventListener("click", (e) => {
+      if (formIsOpen && !e.composedPath().includes(formRef.current)) {
+        setformIsOpen(false);
+      }
+    });
+
+    return () => {
+      window.removeEventListener("click", () => {
+        if (formIsOpen) {
+          setformIsOpen(false);
+        }
+      });
+    };
+  }, [formIsOpen]);
+
+  function showForm() {
+    return formIsOpen ? (
       <FormContainer>
         <form onSubmit={handleForm}>
           <Input
+            type={"search"}
             placeholder={"Digite o nome da cidade"}
             value={city}
             onChange={({ target }) => setCity(target.value)}
@@ -27,14 +44,20 @@ export const Search = () => {
           <BtnForm>Buscar</BtnForm>
         </form>
       </FormContainer>
+    ) : (
+      ""
+    );
+  }
+
+  return (
+    <Container ref={formRef}>
+      <SearchBtn onClick={() => setformIsOpen(!formIsOpen)} />
+      {showForm()}
     </Container>
   );
 };
 
 const Container = styled.div`
-  width: 42px;
-  height: 42px;
-
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -66,9 +89,18 @@ const SearchBtn = styled.button`
   border: none;
 `;
 
+const animation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`;
+
 const FormContainer = styled.div`
-  position: absolute;
-  right: 0;
   border-radius: 4px;
   background: radial-gradient(
       100% 100% at 0% 0%,
@@ -82,13 +114,15 @@ const FormContainer = styled.div`
       rgba(242, 251, 255, 0.12) 100%
     );
   backdrop-filter: blur(20px);
+
+  animation: ${animation} 0.3s forwards;
 `;
 
 const Input = styled.input`
   width: 250px;
   height: 2rem;
   margin: 1rem;
-  padding: 8px;
+  padding: 10px;
 
   border: none;
   border-radius: 3px;
@@ -112,7 +146,7 @@ const BtnForm = styled.button`
   background: #ffc700;
   border: none;
   border-radius: 4px;
-  padding: 10px 16px;
+  padding: 6px 16px;
   margin: 1rem;
   margin-top: 0;
 
