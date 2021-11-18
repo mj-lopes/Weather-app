@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import nextDaysPrevision from "./nextDaysPrevision";
+import { fetchNextDayPrevision } from "./nextDaysPrevision";
 
 const slice = createSlice({
   name: "previsaoDoDia",
@@ -36,7 +36,6 @@ export const fetchTodayPrevision = (pos) => async (dispatch) => {
     const resp = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&appid=${apiKey}&units=metric&lang=pt_br`,
     );
-    console.log(resp);
 
     if (!resp.ok) throw new Error(resp.message);
 
@@ -57,6 +56,12 @@ export const fetchCityData = (name) => async (dispatch) => {
 
     const data = await resp.json();
 
+    const location = {
+      latitude: data.coord.lat,
+      longitude: data.coord.lon,
+    };
+
+    dispatch(fetchNextDayPrevision(location));
     dispatch(fetchSuccess(data));
   } catch (e) {
     dispatch(fetchError(e.message));
