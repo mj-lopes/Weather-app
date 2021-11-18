@@ -33,16 +33,14 @@ export const Search = () => {
 
   function showForm() {
     return formIsOpen ? (
-      <FormContainer>
-        <form onSubmit={handleForm}>
-          <Input
-            type={"search"}
-            placeholder={"Digite o nome da cidade"}
-            value={city}
-            onChange={({ target }) => setCity(target.value)}
-          />
-          <BtnForm>Buscar</BtnForm>
-        </form>
+      <FormContainer onSubmit={handleForm} role={"search"}>
+        <Input
+          type={"search"}
+          placeholder={"Digite o nome da cidade"}
+          value={city}
+          onChange={({ target }) => setCity(target.value)}
+        />
+        <BtnForm>Buscar</BtnForm>
       </FormContainer>
     ) : (
       ""
