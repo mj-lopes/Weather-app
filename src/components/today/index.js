@@ -108,8 +108,9 @@ const Container = styled.div`
       rgba(242, 251, 255, 0.12) 100%
     );
   backdrop-filter: blur(20px);
-
   border-radius: 6px;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.33);
+  overflow: hidden;
 
   @media screen and (max-width: 700px) {
     max-width: 90vw;
@@ -259,7 +260,7 @@ const Location = styled.div`
     rgba(240, 173, 67, 0.409688) 47.22%,
     rgba(240, 173, 67, 0) 86.67%
   );
-  border-radius: 0px 0px 10px 10px;
+
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: right;

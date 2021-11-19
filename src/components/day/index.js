@@ -65,6 +65,7 @@ const Container = styled.div`
 
   min-height: 190px;
   margin: 0 1rem;
+  margin-bottom: 16px;
 
   background: radial-gradient(
       100% 100% at 0% 0%,
@@ -79,6 +80,8 @@ const Container = styled.div`
     );
   backdrop-filter: blur(20px);
 
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.33);
+  overflow: hidden;
   border-radius: 6px;
 `;
 
@@ -89,7 +92,6 @@ const DayOFWeekContainer = styled.div`
     rgba(240, 173, 67, 0.409688) 50.22%,
     rgba(240, 173, 67, 0) 86.67%
   );
-  border-radius: 0px 10px 0px 0px;
   padding: 0.5rem 1rem;
   text-align: right;
 `;

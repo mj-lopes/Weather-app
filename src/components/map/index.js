@@ -26,7 +26,7 @@ export const Map = () => {
 
   if (!locationMap) return null;
   return (
-    <div style={{ marginTop: "1rem" }}>
+    <div>
       <iframe
         width={screenSize}
         height="500"
