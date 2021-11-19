@@ -76,6 +76,8 @@ const Container = styled.div`
       rgba(242, 251, 255, 0.12) 100%
     );
   backdrop-filter: blur(20px);
+
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.1);
 `;
 
 const SearchBtn = styled.button`
@@ -85,7 +87,6 @@ const SearchBtn = styled.button`
 
   cursor: pointer;
   border: none;
-  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.1);
 `;
 
 const animation = keyframes`
