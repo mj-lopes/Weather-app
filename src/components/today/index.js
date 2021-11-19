@@ -109,7 +109,7 @@ const Container = styled.div`
     );
   backdrop-filter: blur(20px);
   border-radius: 6px;
-  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.33);
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
   @media screen and (max-width: 700px) {

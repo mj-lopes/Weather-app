@@ -85,7 +85,7 @@ const SearchBtn = styled.button`
 
   cursor: pointer;
   border: none;
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.33);
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.1);
 `;
 
 const animation = keyframes`
