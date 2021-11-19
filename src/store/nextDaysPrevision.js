@@ -36,10 +36,10 @@ export const fetchNextDayPrevision = (pos) => async (dispatch) => {
       `https://api.openweathermap.org/data/2.5/onecall?lat=${pos.latitude}&lon=${pos.longitude}&exclude={hourly}&appid=${apiKey}&units=metric&lang=pt_br
 `,
     );
-
-    if (!resp.ok) throw new Error(resp.message);
-
     const data = await resp.json();
+
+    if (!resp.ok) throw new Error(data.message);
+
     dispatch(fetchSuccess(data));
   } catch (e) {
     dispatch(fetchError(e.message));

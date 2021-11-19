@@ -2,7 +2,15 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Today, NextDays, Map, Loading, Informer, Search } from "./components";
+import {
+  Today,
+  NextDays,
+  Map,
+  Loading,
+  Informer,
+  Search,
+  Error,
+} from "./components";
 import { fetchNextDayPrevision } from "./store/nextDaysPrevision";
 import { fetchTodayPrevision } from "./store/todayPrevision";
 
@@ -24,6 +32,11 @@ const App = () => {
     ({ nextDaysPrevision }) => nextDaysPrevision.data,
   );
   const hasDataFetched = dataToday && dataNextDays;
+
+  // Verifica se existe algum erro
+  const errorTodayInfo = useSelector(
+    ({ todayPrevision }) => todayPrevision.error,
+  );
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
@@ -49,8 +62,14 @@ const App = () => {
     );
   }
 
+  function hasError() {
+    if (errorTodayInfo) return <Error errorMessage={errorTodayInfo} />;
+    return null;
+  }
+
   return (
     <Container>
+      {hasError()}
       <Search />
       <Today />
       <NextDays />

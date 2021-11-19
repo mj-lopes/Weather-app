@@ -35,10 +35,10 @@ export const fetchTodayPrevision = (pos) => async (dispatch) => {
     const resp = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&appid=${apiKey}&units=metric&lang=pt_br`,
     );
-
-    if (!resp.ok) throw new Error(resp.message);
-
     const data = await resp.json();
+
+    if (!resp.ok) throw new Error(data.message);
+
     dispatch(fetchSuccess(data));
   } catch (e) {
     dispatch(fetchError(e.message));
@@ -51,9 +51,9 @@ export const fetchCityData = (name) => async (dispatch) => {
     const resp = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${apiKey}&units=metric&lang=pt_br`,
     );
-    if (!resp.ok) throw new Error(resp.message);
-
     const data = await resp.json();
+
+    if (!resp.ok) throw new Error(data.message);
 
     const location = {
       latitude: data.coord.lat,

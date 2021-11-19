@@ -6,3 +6,4 @@ export * from "./map";
 export * from "./loading";
 export * from "./informer";
 export * from "./search";
+export * from "./errorMessage";
