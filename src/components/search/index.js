@@ -56,9 +56,11 @@ export const Search = () => {
 };
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 16px;
+  right: 16px;
   z-index: 10;
 
   border: none;
@@ -78,13 +80,22 @@ const Container = styled.div`
   backdrop-filter: blur(20px);
 
   box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.1);
+
+  @media screen and (max-width: 700px) {
+    align-self: flex-end;
+    flex-grow: 0;
+    position: relative;
+    right: 16px;
+    margin-bottom: 1rem;
+  }
 `;
 
 const SearchBtn = styled.button`
+  align-self: flex-end;
   width: 42px;
   height: 42px;
   background: url(${Lupa}) no-repeat center;
-
+  text-align: right;
   cursor: pointer;
   border: none;
 `;
