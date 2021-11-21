@@ -26,7 +26,7 @@ export const Map = () => {
 
   if (!locationMap) return null;
   return (
-    <div>
+    <div style={{ zIndex: "10" }}>
       <iframe
         width={screenSize}
         height="500"
