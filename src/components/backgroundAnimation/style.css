@@ -1,9 +1,9 @@
 .nuvemBackgroud {
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 109px;
+  height: 70px;
   z-index: 0;
   left: -100px;
   top: 0px;
-  background-color: lightgrey;
+  background: url("../../asserts/cloud.png");
 }

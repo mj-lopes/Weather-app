@@ -8,16 +8,19 @@ export const BackgroundAnimation = () => {
   function createCloud() {
     const cloud = document.createElement("div");
     cloud.classList.add("nuvemBackgroud");
-    background.current.appendChild(cloud);
+    background.current?.appendChild(cloud);
 
     return cloud;
   }
 
   function excludeCloud(cloudEl) {
-    background.current.removeChild(cloudEl);
+    background.current?.removeChild(cloudEl);
   }
 
   function animation() {
+    const timerToNewAnimation = Math.random() * (20000 - 5000 + 1) + 5000;
+    setTimeout(() => animation(), timerToNewAnimation);
+
     const windowWidth = window.innerWidth;
 
     const cloud = createCloud();
@@ -30,12 +33,11 @@ export const BackgroundAnimation = () => {
 
     const interval = setInterval(() => {
       if (cloudPosition < windowWidth) {
-        cloudPosition += 1;
+        cloudPosition += 2;
         cloud.style.left = cloudPosition + "px";
       } else {
         clearInterval(interval);
         excludeCloud(cloud);
-        animation();
       }
     }, 30);
   }
