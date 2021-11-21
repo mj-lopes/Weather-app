@@ -112,6 +112,7 @@ const animation = keyframes`
 `;
 
 const FormContainer = styled.form`
+  display: flex;
   border-radius: 4px;
   background: radial-gradient(
       100% 100% at 0% 0%,
@@ -127,12 +128,14 @@ const FormContainer = styled.form`
   backdrop-filter: blur(20px);
 
   animation: ${animation} 0.3s forwards;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const Input = styled.input`
   width: 250px;
-  height: 2rem;
-  margin: 1rem;
   padding: 10px;
 
   border: none;
@@ -158,8 +161,6 @@ const BtnForm = styled.button`
   border: none;
   border-radius: 4px;
   padding: 6px 16px;
-  margin: 1rem;
-  margin-top: 0;
 
   cursor: pointer;
 
