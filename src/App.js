@@ -10,6 +10,7 @@ import {
   Informer,
   Search,
   Error,
+  BackgroundAnimation,
 } from "./components";
 import { fetchNextDayPrevision } from "./store/nextDaysPrevision";
 import { fetchTodayPrevision } from "./store/todayPrevision";
@@ -69,6 +70,7 @@ const App = () => {
 
   return (
     <Container>
+      <BackgroundAnimation />
       {hasError()}
       <Search />
       <Today />
@@ -80,6 +82,7 @@ const App = () => {
 
 const Container = styled.main`
   display: flex;
+  z-index: -10;
   flex-direction: column;
   min-height: 100vh;
   background: radial-gradient(

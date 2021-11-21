@@ -7,3 +7,4 @@ export * from "./loading";
 export * from "./informer";
 export * from "./search";
 export * from "./errorMessage";
+export * from "./backgroundAnimation";

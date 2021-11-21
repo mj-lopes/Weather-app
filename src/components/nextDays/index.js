@@ -36,7 +36,7 @@ const List = styled.ul`
 
 const Tittle = styled.h2`
   padding-left: 1rem;
-
+  z-index: 10;
   font-size: 2rem;
 
   &:after {
