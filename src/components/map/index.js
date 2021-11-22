@@ -10,9 +10,9 @@ export const Map = () => {
   function updateContainerWidth() {
     const device = getDeviceType();
     if (device === "mobile" || device === "tablet") {
-      setScreenSize(window.innerWidth);
+      setScreenSize(window.outerWidth);
     } else {
-      setScreenSize(window.innerWidth - 15);
+      setScreenSize(window.outerWidth - 15);
     }
   }
 
