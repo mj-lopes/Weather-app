@@ -28,7 +28,7 @@ export const BackgroundAnimation = () => {
       getComputedStyle(cloud).getPropertyValue("left").split(/px/g)[0],
     );
 
-    const windowHeight = Math.random() * window.innerHeight;
+    const windowHeight = Math.random() * (window.innerHeight + 500);
     cloud.style.top = windowHeight + "px";
 
     const interval = setInterval(() => {
@@ -56,5 +56,5 @@ const Bg = styled.div`
   position: absolute;
   z-index: 0;
   width: 100%;
-  height: 100vh;
+  height: 160vh;
 `;
