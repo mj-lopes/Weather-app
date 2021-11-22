@@ -18,10 +18,10 @@
  <a href="#autor">Autor</a> 
 </p>
 
-<h4 align="center"> 
-	🚧  Em construção...  🚧
-</h4>
-
+<div align='center'>
+	<h3>Status do Projeto</h3>
+	<p> Concluido 🌟</p>
+</div>
 <h2> Features 👓</h2>
 
 - Carregamento automático da previsão na localidade do usuário
@@ -86,8 +86,8 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 
 <h2> TODO? 📝 </h2>
 
-- [ ] Search form para pesquisa de cidades através do nome
-- [ ] Animações de fundo
+- [x] Search form para pesquisa de cidades através do nome
+- [x] Animações de fundo
 
 <h2 id='autor'> Autor </h2>
 
